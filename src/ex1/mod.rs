@@ -3,7 +3,7 @@ use crate::generic::parse::as_int;
 use itertools::Itertools;
 
 pub fn run() {
-    let parsed_lines: Vec<i64> = get_lines("input/ex1/ex1")
+    let parsed_lines: Vec<i64> = get_lines("input/ex3/test")
         .into_iter()
         .map(|s| as_int(&s))
         .collect();
