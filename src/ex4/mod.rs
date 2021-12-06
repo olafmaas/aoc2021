@@ -19,11 +19,8 @@ pub fn run() {
         .collect();
 
     let boards = parse_boards(lines);
-    // .into_iter()
-    // .map(|s| as_int(&s))
-    // .collect();
 
-    // part1(numbers, boards);
+    part1(numbers.clone(), boards.clone());
     part2(numbers, boards);
 }
 
