@@ -12,7 +12,7 @@ pub fn run() {
     let input: Vec<String> = get_lines("input/ex10/ex1");
 
     part1(input.clone());
-    part2(input.clone());
+    part2(input);
 
 }
 
@@ -53,7 +53,7 @@ fn parse(input: String) -> Result<(), Error> {
 
     match char {
       '<' | '[' | '{' | '(' => stack.push(char),
-      '>' | ']' | '|' | ')' => compare(&mut stack, inverse(char), char),
+      '>' | ']' | '}' | ')' => compare(&mut stack, inverse(char), char)?,
       c => panic!("Uknown char {}", c)
     };
   }
@@ -68,7 +68,7 @@ fn parse(input: String) -> Result<(), Error> {
 
 fn inverse(c: char) -> char {
   match c {
-    '>' => '>',
+    '>' => '<',
     ']' => '[',
     '}' => '{',
     ')' => '(',
@@ -84,7 +84,6 @@ fn as_value_incomplete(res: Result<(), Error>) -> Vec<usize> {
 }
 
 fn compare(stack: &mut Vec<char>, expected: char, current: char) -> Result<(), Error> {
-  let cloned_stack = stack.clone();
   let found = stack.pop().unwrap();
 
   if found != expected {
