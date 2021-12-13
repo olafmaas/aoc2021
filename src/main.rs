@@ -7,8 +7,11 @@ mod ex6;
 mod ex7;
 mod ex9;
 mod ex10;
+mod ex11;
+mod ex12;
+mod ex13;
 pub mod generic;
 
 fn main() {
-    ex10::run();
+    ex13::run();
 }
