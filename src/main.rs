@@ -12,8 +12,9 @@ mod ex12;
 mod ex13;
 mod ex14;
 mod ex15;
+mod ex16;
 pub mod generic;
 
 fn main() {
-    ex15::run();
+    ex16::run();
 }
